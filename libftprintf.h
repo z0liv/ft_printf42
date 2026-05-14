@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 11:02:33 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/12 10:51:55 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/05/14 12:57:38 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
