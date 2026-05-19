@@ -6,12 +6,11 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 11:12:07 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/19 13:04:29 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/05/19 14:55:58 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#include <stdio.h>
 
 static int	ft_handle_conversion(char c, va_list list)
 {
@@ -20,7 +19,7 @@ static int	ft_handle_conversion(char c, va_list list)
 	else if (c == 's')
 		return (ft_putstr(va_arg(list, char *)));
 	else if (c == 'p')
-		return (ft_putstr(va_arg(list, void *)));
+		return (ft_putmem((long int) va_arg(list, void *)));
 	else if (c == 'd')
 		return (ft_putnbr(va_arg(list, int)));
 	else if (c == 'i')
@@ -28,9 +27,9 @@ static int	ft_handle_conversion(char c, va_list list)
 	else if (c == 'u')
 		return (ft_put_uint(va_arg(list, int)));
 	else if (c == 'x')
-		return (ft_puthex_fd(va_arg(list, unsigned int), 1));
+		return (ft_puthex(va_arg(list, unsigned int), 1));
 	else if (c == 'X')
-		return (ft_puthex_fd(va_arg(list, unsigned int), 0));
+		return (ft_puthex(va_arg(list, unsigned int), 0));
 	else if (c == '%')
 		return (ft_putchar(c));
 	return (0);
@@ -64,12 +63,15 @@ int	ft_printf(char const *str, ...)
 	return ((counter - delim_counter) + written);
 }
 /*
-//#include <stdio.h>
+#include <stdio.h>
 int	main(void)
 {
-	int result = ft_printf("%s \n", "string");
+	void	*ptr = "string";
+	int result = ft_printf("%c %s %p %d 
+	%i %u %x %X %% \n",'c', "string", ptr, 1234, 1234, 1234, 1234, 1234);
 	ft_printf("%d \n", result);
-	result = printf("%s \n", "string");
+	result = printf("%c %s %p %d %i %u
+	 %x %X %% \n",'c', "string", ptr, 1234, 1234, 1234, 1234, 1234);
 	printf("%d \n", result);
 	return (0);
 }
