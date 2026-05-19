@@ -6,13 +6,13 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 10:35:55 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/19 13:02:19 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/05/19 16:08:03 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {
-	return (write(1, &c, sizeof(c)));
+	return (write(1, &c, 1));
 }

@@ -6,11 +6,11 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 13:07:00 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/19 14:55:38 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:26:14 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static int	ft_puthex_mem(size_t n)
 {

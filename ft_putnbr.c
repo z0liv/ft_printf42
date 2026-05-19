@@ -6,11 +6,11 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 10:58:55 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/19 11:34:59 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:26:10 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr(int n)
 {

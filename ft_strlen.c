@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/09 11:02:33 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/19 14:56:24 by omarquez         ###   ########.fr       */
+/*   Created: 2026/04/24 13:01:18 by omarquez          #+#    #+#             */
+/*   Updated: 2026/05/19 15:29:22 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
-# include "./libft/libft.h"
-# include <stdarg.h>
+#include "ft_printf.h"
 
-int	ft_printf(char const *str, ...);
-int	ft_putchar(char c);
-int	ft_put_uint(int n);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_puthex(unsigned int n, int is_minus);
-int	ft_putmem(long int ptr);
+size_t	ft_strlen(const char *str)
+{
+	size_t	counter;
 
-#endif
+	counter = 0;
+	while (*str != '\0')
+	{
+		counter ++;
+		str ++;
+	}
+	return (counter);
+}

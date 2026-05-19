@@ -6,11 +6,11 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 10:24:47 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/19 14:43:13 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:26:18 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_puthex(unsigned int n, int is_minus)
 {
