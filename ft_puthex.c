@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/09 11:02:33 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/19 11:56:33 by omarquez         ###   ########.fr       */
+/*   Created: 2026/05/19 10:24:47 by omarquez          #+#    #+#             */
+/*   Updated: 2026/05/19 13:01:14 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
-# include "./libft/libft.h"
-# include <stdarg.h>
+#include "libftprintf.h"
 
-int	ft_printf(char const *, ...);
-int	ft_putchar(char c);
-int	ft_put_uint(int n);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_puthex_fd(unsigned int n, int is_minus);
+int	ft_puthex_fd(unsigned int n, int is_minus)
+{
+	int	counter;
 
-#endif
+	counter = 0;
+	if (n >= 16)
+		counter += ft_puthex_fd(n / 16, is_minus);
+	if (n % 16 >= 10 && is_minus == 1)
+		counter += ft_putchar(n % 16 + 'a' - 10);
+	else if (n % 16 >= 10 && is_minus == 0)
+		counter += ft_putchar(n % 16 + 'A' - 10);
+	else
+		counter += ft_putchar(n % 16 + '0');
+	return (counter);
+}

@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: omarquez <omarquez@student.42urduliz.co    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/05/09 10:45:10 by omarquez          #+#    #+#              #
-#    Updated: 2026/05/12 10:49:49 by omarquez         ###   ########.fr        #
+#                                                          :::      ::::::::   #
+#   Makefile                                             :+:      :+:    :+:   #
+#                                                      +:+ +:+         +:+     #
+#   By: omarquez <omarquez@student.42urduliz.com>    +#+  +:+       +#+        #
+#                                                  +#+#+#+#+#+   +#+           #
+#   Created: 2026/05/09 10:45:10 by omarquez            #+#    #+#             #
+#   Updated: 2026/05/19 11:53:20 by omarquez           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c
+SRCS = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_put_uint.c \
+ft_puthex.c
 INCLUDES = -C libft libft.h
 
 OBJS = $(SRCS:.c=.o)

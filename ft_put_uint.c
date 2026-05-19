@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_put_uint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/09 11:02:33 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/19 11:56:33 by omarquez         ###   ########.fr       */
+/*   Created: 2026/05/19 10:43:20 by omarquez          #+#    #+#             */
+/*   Updated: 2026/05/19 13:02:09 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
-# include "./libft/libft.h"
-# include <stdarg.h>
+#include "libftprintf.h"
 
-int	ft_printf(char const *, ...);
-int	ft_putchar(char c);
-int	ft_put_uint(int n);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_puthex_fd(unsigned int n, int is_minus);
+int	ft_put_uint(int n)
+{
+	unsigned int	nbr;
+	unsigned int	counter;
 
-#endif
+	nbr = (unsigned)n;
+	counter = 0;
+	if (nbr >= 10)
+	{
+		counter = counter + ft_putnbr(nbr / 10);
+		counter = counter + ft_putchar(nbr % 10 + '0');
+	}
+	else
+		counter = counter + ft_putchar(nbr + '0');
+	return (counter);
+}
