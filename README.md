@@ -25,6 +25,12 @@ La función replica el comportamiento del `printf` original, devolviendo el núm
 El proyecto incluye un `Makefile` para compilar la biblioteca de forma automatizada.
 
 ### 1. Compilación
+Primero deberas clonar este repositorio, usando el siguiente comando en tu terminal:
+```bash
+git clone git@vogsphere.42urduliz.com:vogsphere/intra-uuid-a0d6d0bd-d3f8-49df-9768-2e6138903745-7411909-omarquez ft_printf
+cd ft_printf
+```
+
 Para generar el archivo de la biblioteca estática (`libftprintf.a`), ejecuta en la terminal:
 ```bash
 make
@@ -45,8 +51,9 @@ int main(void)
 cc main.c -L. -lftprintf -o mi_programa
 ```
 ## RECURSOS:
-
 - Mis compañeros del cursus me han ayudado mucho a entender el funcionamiento requerido para el proyecto.
 - [tutorialspoint]https://www.tutorialspoint.com/c_standard_library/stdarg_h.htm La use para un primer contacto con los argumentos variables.
 - [stackoverflow]https://stackoverflow.com/questions/40484293/stdarg-and-printf-in-c Me sirvió como apoyo para complementar el conocimiento sobre los argumentos variables.
 - [geeksforgeeks]https://www.geeksforgeeks.org/c/variadic-functions-in-c/ Ejemplo visual y práctico de como funcionan los argumentos variables.
+#### Uso de la IA:
+He utilizado la IA para la realización de este archivo README.
