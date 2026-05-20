@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 11:12:07 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/19 16:27:49 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/05/20 11:13:40 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	ft_handle_conversion(char c, va_list list)
 {
 	if (c == 'c')
-		return(ft_putchar(va_arg(list, int)));
+		return (ft_putchar(va_arg(list, int)));
 	else if (c == 's')
 		return (ft_putstr(va_arg(list, char *)));
 	else if (c == 'p')
@@ -56,26 +56,80 @@ int	ft_printf(char const *str, ...)
 		}
 		else
 			ft_putchar(str[counter++]);
-
 	}
 	va_end(list);
 	return ((counter - delim_counter) + written);
 }
-
 /*
 #include <stdio.h>
-int	main(void)
+int main (void)
 {
-	void	*ptr = "string";
-	int result = ft_printf("%c %s %p %d %i %u %x %X %% \n",'c', "string", ptr, 1234, 1234, 1234, 1234, 1234);
-	ft_printf("%d \n", result);
-	result = printf("%c %s %p %d %i %u %x %X %% \n",'c', "string", ptr, 1234, 1234, 1234, 1234, 1234);
-	printf("%d \n", result);
-	
-	int result = ft_printf(" NULL %s NULL ", NULL);
-	ft_printf("%d \n", result);
-	int result_og = printf(" NULL %s NULL ", NULL);
-	printf("%d \n", result_og);
+	int	number = 123;
+	int	cero_number = 0;
+	int negative_number = -123;
+	int	hexadecimal_number = 1000;
+	int	negative_hexadecimal_number = -1000;
+	int	min_number = -2147483648;
+	int	max_number = 2147483647;
+	unsigned int	unsigned_number = 123;
+	char simple_char = '0';
+	char especial_char = '@';
+	char *string = "Hola Mundo";	
+	char *empty_string = "";
+	void *pointer = NULL;
+	char *NULL_string = '\0';
+
+	printf("Original Printf:\n");
+	printf("\n");
+
+	printf("= %i\n", number);
+	printf("= %i\n", cero_number);
+	printf("= %i\n", negative_number);
+	printf("= %i\n", min_number);
+	printf("= %d\n", max_number);
+	printf("= %u\n", unsigned_number);
+	printf("= %x\n", hexadecimal_number);
+	printf("= %x\n", negative_hexadecimal_number);
+	printf("= %X\n", hexadecimal_number);
+	printf("= %X\n", negative_hexadecimal_number);
+	printf("= %c\n", simple_char);
+	printf("= %c\n", especial_char);
+	printf("= %s\n", string);
+	printf("= %s\n", empty_string);
+	printf("= %p\n", pointer);
+	printf("= %s\n", NULL_string);
+	printf("\n");
+
+	printf("My Ft_Printf:\n");
+	printf("\n");
+
+	ft_printf("= %i\n", number);
+	ft_printf("= %i\n", cero_number);
+	ft_printf("= %i\n", negative_number);
+	ft_printf("= %i\n", min_number);
+	ft_printf("= %d\n", max_number);
+	ft_printf("= %u\n", unsigned_number);
+	ft_printf("= %x\n", hexadecimal_number);
+	ft_printf("= %x\n", negative_hexadecimal_number);
+	ft_printf("= %X\n", hexadecimal_number);
+	ft_printf("= %X\n", negative_hexadecimal_number);
+	ft_printf("= %c\n", simple_char);
+	ft_printf("= %c\n", especial_char);
+	ft_printf("= %s\n", string);
+	ft_printf("= %s\n", empty_string);
+	ft_printf("= %p\n", pointer);
+	ft_printf("= %s\n", NULL_string);
+	printf("\n\n");
+
+	int	counter_ft;
+	int counter_og;
+	counter_ft = ft_printf("Hello World, 658 %p, %s, %s, %%, %c, %d, %i, %u, %x,
+	 %X, %s\n",pointer, "", "hola", 'W', -30, 200,  0, 1565, 1565, NULL_string);
+	counter_og = printf("Hello World, 658 %p, %s, %s, %%, %c, %d, %i, %u, %x,
+	 %X, %s\n", pointer, "", "hola", 'W', -30, 200,  0, 1565, 1565, NULL_string);
+	printf("%i = %i\n", counter_ft, counter_og);
+	ft_printf("%i = %i\n", counter_ft, counter_og);
+
 	return (0);
 }
 */
