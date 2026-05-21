@@ -57,3 +57,33 @@ cc main.c -L. -lftprintf -o mi_programa
 - [geeksforgeeks]https://www.geeksforgeeks.org/c/variadic-functions-in-c/ Ejemplo visual y práctico de como funcionan los argumentos variables.
 #### Uso de la IA:
 He utilizado la IA para la realización de este archivo README.
+
+## Algoritmo de `ft_printf`
+
+El algoritmo replica el `printf` estándar procesando la cadena carácter por carácter mediante un bucle iterativo y delegando el formateo a un despachador de tipos.
+
+### 1. Flujo Principal (`ft_printf`)
+
+* **Texto Plano:** Si el carácter actual no es `%`, se imprime directamente con `ft_putchar` y el contador avanza.
+* **Detección de Formato (`%`):** Cuando encuentra un `%`, evalúa el siguiente carácter (`str[counter + 1]`) pasándolo junto a la lista de argumentos variables (`va_list`) a la función enrutadora. El puntero de la cadena avanza dos posiciones.
+
+### 2. Enrutador de Conversiones (`ft_handle_conversion`)
+
+Evalúa el carácter mediante una estructura condicional, extrae el argumento con `va_arg` usando el tipo de dato correcto y lo pasa a la función auxiliar correspondiente:
+
+| Conversión | Tipo de Dato | Función Auxiliar |
+| :--- | :--- | :--- |
+| `%c` / `%%` | `int` / Literal | `ft_putchar` |
+| `%s` | `char *` | `ft_putstr` |
+| `%p` | `void *` | `ft_putmem` |
+| `%d` / `%i` | `int` | `ft_putnbr` |
+| `%u` | `int` | `ft_put_uint` |
+| `%x` / `%X` | `unsigned int` | `ft_puthex` |
+
+---
+
+### Valor de Retorno
+
+Cada función auxiliar devuelve el número de bytes que imprimió. Al final, el total se calcula con la siguiente fórmula:
+
+$$\text{Retorno} = (\text{Total caracteres leídos} - \text{Caracteres de formato}) + \text{Bytes impresos por conversiones}$$
