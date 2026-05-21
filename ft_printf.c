@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 11:12:07 by omarquez          #+#    #+#             */
-/*   Updated: 2026/05/20 11:13:40 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/05/21 10:17:08 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int main (void)
 	unsigned int	unsigned_number = 123;
 	char simple_char = '0';
 	char especial_char = '@';
-	char *string = "Hola Mundo";	
+	char *string = "hello world";	
 	char *empty_string = "";
 	void *pointer = NULL;
 	char *NULL_string = '\0';
@@ -123,10 +123,8 @@ int main (void)
 
 	int	counter_ft;
 	int counter_og;
-	counter_ft = ft_printf("Hello World, 658 %p, %s, %s, %%, %c, %d, %i, %u, %x,
-	 %X, %s\n",pointer, "", "hola", 'W', -30, 200,  0, 1565, 1565, NULL_string);
-	counter_og = printf("Hello World, 658 %p, %s, %s, %%, %c, %d, %i, %u, %x,
-	 %X, %s\n", pointer, "", "hola", 'W', -30, 200,  0, 1565, 1565, NULL_string);
+	counter_ft = ft_printf("Hello World, 658 %p, %s, %s, %%, %c, %d, %i, %u, %x, %X, %s\n",pointer, "", "hello", 'W', -30, 200,  0, 1565, 1565, NULL_string);
+	counter_og = printf("Hello World, 658 %p, %s, %s, %%, %c, %d, %i, %u, %x, %X, %s\n", pointer, "", "hello", 'W', -30, 200,  0, 1565, 1565, NULL_string);
 	printf("%i = %i\n", counter_ft, counter_og);
 	ft_printf("%i = %i\n", counter_ft, counter_og);
 
